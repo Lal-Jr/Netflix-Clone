@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import { render } from 'react-dom';
 import App from './app';
+import { GlobalStyles } from './global-styles';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+render(
+  <GlobalStyles />
+  <App />
+  </>,
   document.getElementById('root')
 );
