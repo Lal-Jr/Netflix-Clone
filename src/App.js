@@ -1,9 +1,10 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import HomeScreen from './components/HomeScreen/HomeScreen';
 
-function App() {
+const App = () => {
   return (
-    <><h1>Hwllo</h1></>
+    <HomeScreen />
   );
 }
 
