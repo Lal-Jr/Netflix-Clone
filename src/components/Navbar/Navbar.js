@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import './Navbar.css'
+import './Navbar.scss'
 
 const Navbar = () => {
     const [show,handleShow] = useState(false);
