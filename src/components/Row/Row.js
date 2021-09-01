@@ -21,7 +21,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
 	return (
 		<div className="row">
 			<h2>{title}</h2>
-			<div classname="row__posters">
+			<div classname="row__posters" id="row__posters">
 				{movies.map(
 					(movie) =>
 						((isLargeRow && movie.poster_path) ||
