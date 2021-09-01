@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Banner.scss";
 import axios from "../../axios";
 import requests from "../../Requests";
+import { GoPlus } from 'react-icons/go'
+import { BsPlayFill } from 'react-icons/bs'
 
 const Banner = () => {
 	const [movie, setMovie] = useState([]);
@@ -40,16 +42,19 @@ const Banner = () => {
 					{movie?.title || movie?.original_name}
 				</h1>
 				<div className="banner__contents__buttons">
-					<button className="banner__contents__buttons__button">
+					<button className="banner__contents__buttons__button__invert">
 						Play
 					</button>
 					<button className="banner__contents__buttons__button">
-						My List
+						<GoPlus style={{ marginRight: "5px"}}/>Watchlist
 					</button>
 				</div>
 				<h1 className="banner__contents__description">
 					{truncate(movie?.overview, 150)}
 				</h1>
+				<button className="banner__contents__buttons__button">
+						<BsPlayFill style={{ marginRight: "5px"}}/>Watch Trailer
+				</button>
 			</div>
 			<div className="banner--fadeBottom" />
 		</header>
