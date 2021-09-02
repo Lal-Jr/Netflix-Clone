@@ -21,8 +21,6 @@ const Banner = () => {
 		fetchData();
 	}, []);
 
-	console.log(movie);
-
 	const truncate = (string, numLine) => {
 		return string?.length > numLine
 			? string.substr(0, numLine - 1) + "..."
