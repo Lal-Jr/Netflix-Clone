@@ -26,6 +26,10 @@
 			border: none;
 			cursor: pointer;
 			margin-top: 20px;
+
+			&:hover {
+				background-color: #f40612;
+			}
 		}
 
 		& > h1 {

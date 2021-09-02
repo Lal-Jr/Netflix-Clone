@@ -19,10 +19,12 @@ const ProfilePage = () => {
 					/>
 					<div className="profilePage__body__info__details">
 						<h2>{user.email}</h2>
-						<div className="profilePage__body__info__details_plans"></div>
+						<div className="profilePage__body__info__details__plans">
+							<h3>Plans (Current Plan: Premium)</h3>
+						</div>
 						<button
 							onClick={() => auth.signOut()}
-							className="profilePage__body__info__details_signOut"
+							className="profilePage__body__info__details__signOut"
 						>
 							Sign Out
 						</button>
