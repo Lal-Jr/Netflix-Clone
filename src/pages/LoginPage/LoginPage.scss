@@ -1,20 +1,21 @@
 .loginPage{
     position: relative;
     height: 100%;
-    background: url("https://assests.nflxext.com/ffe/siteui/vlv3/757ab38f-5d08-40bc-b3eb-eaba63ed8203/website_medium.jpg") center no-repeat;
+    background: url("https://cdn.hipwallpaper.com/i/98/21/dUyCkp.jpg") center no-repeat;
     background-size: cover;
 
     &__logo{
         position: fixed;
-        left: 0;
-        width: 150px;
+        top: 30px;
+        left: 15px;
+        width: 200px;
         object-fit: contain;
         padding-left: 20px;
     }
     &__button{
         position: fixed;
-        right: 20px;
-        top: 20px;
+        right: 35px;
+        top: 30px;
         padding: 10px 20px;
         font-size: 1rem;
         color: #fff;
@@ -42,11 +43,11 @@
         width: 100%;
 
         & > h1 {
-            font-size: 3.125rem;
+            font-size: 4rem;
             margin-bottom: 20px;
         }
         & > h2 {
-            font-size: 2rem;
+            font-size: 1.65rem;
             font-weight: 400;
             margin-bottom: 30px;
         }
@@ -59,20 +60,27 @@
             margin: 20px;
 
             & > form > input{
-                padding: 20px;
+                padding: 27.5px 20px 20.5px;
                 outline: none;
-                height: 50px;
+                height: 42px;
                 width: 30%;
                 border: none;
                 max-width: 600px;
+                font-weight: 500;
             }
             &__getStarted{
-                padding: 16px 20px;
-                font-size: 1rem;
+                height: 50px;
+                padding: 6px 20px;
+                font-size: 1.25rem;
                 color: #fff;
                 background-color: #e50914;
                 border: none;
                 cursor: pointer;
+                box-shadow: 0 1px 0 rgba(0,0,0,.45);
+
+                &:hover{
+                    background-color: #f40612;
+                }
             }
         }
     }

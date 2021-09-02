@@ -9,7 +9,7 @@ import {
 import LoginPage from "./pages/LoginPage/LoginPage";
 
 const App = () => {
-	const user = null; 
+	const user = null;
 	return (
 		<div className="app">
 			<Router>
