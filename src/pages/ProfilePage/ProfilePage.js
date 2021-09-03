@@ -4,9 +4,11 @@ import Navbar from "../../components/Navbar/Navbar";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/userSlice";
 import { auth } from "../../firebase";
+import { useHistory } from "react-router";
 
 const ProfilePage = () => {
 	const user = useSelector(selectUser);
+	const history = useHistory();
 	return (
 		<div className="profilePage">
 			<Navbar />
@@ -23,7 +25,10 @@ const ProfilePage = () => {
 							<h3>Plans (Current Plan: Premium)</h3>
 						</div>
 						<button
-							onClick={() => auth.signOut()}
+							onClick={() => {
+								auth.signOut();
+								history.push("/");
+							}}
 							className="profilePage__body__info__details__signOut"
 						>
 							Sign Out
