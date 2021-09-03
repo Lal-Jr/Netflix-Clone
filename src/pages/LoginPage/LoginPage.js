@@ -19,7 +19,7 @@ const LoginPage = () => {
 				/>
 				<button
 					className="loginPage__button"
-					onClick={() => setSignIn(true)}
+					onClick={() => setSignIn(true) && setSignUp(false)}
 				>
 					Sign In
 				</button>
@@ -54,7 +54,7 @@ const LoginPage = () => {
 				</>
 					
 				) : (
-					(signIn && <SignIn />) ||
+					(signIn && <SignIn /> && setSignUp(false)) ||
 					(signUp && <SignUp />)
 				)}
 			</div>
