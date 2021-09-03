@@ -17,17 +17,6 @@
 			padding: 5px 15px;
 		}
 
-		& > button {
-			padding: 16px 20px;
-			font-size: 1rem;
-			color: #fff;
-			border-radius: 5px;
-			background-color: #e50914;
-			border: none;
-			cursor: pointer;
-			margin-top: 20px;
-		}
-
 		& > h1 {
 			text-align: left;
 			margin-bottom: 25px;
@@ -37,6 +26,38 @@
 			text-align: left;
 			margin-top: 30px;
 		}
+	}
+
+	&__button{
+		padding: 16px 20px;
+			font-size: 1rem;
+			color: #fff;
+			border-radius: 5px;
+			background-color: #e50914;
+			border: none;
+			cursor: pointer;
+			margin-top: 20px;
+	}
+
+	&__buttonDisabled{
+		padding: 16px 20px;
+			font-size: 1rem;
+			color: #fff;
+			border-radius: 5px;
+			border: none;
+			cursor: pointer;
+			margin-top: 20px;
+		background-color: #914f52;
+		cursor: not-allowed;
+	}
+
+	&__green{
+		color: #00FF00;
+		margin-top:5px;
+	}
+	&__red{
+		color: #FF0000;
+		margin-top:5px;
 	}
 
 	&__gray {
@@ -49,20 +70,10 @@
 			text-decoration: underline;
 		}
 	}
-
-	.signup__google{
-		padding: 16px 20px;
-			font-size: 1rem;
-			color: #111;
-			font-weight: 500;
-			border-radius: 5px;
-			background: rgb(247, 247, 247);
-			border: none;
-			cursor: pointer;
-			margin-top: 20px;
-
-			&:hover {
-				background-color: #fff;
-			}
+	.visible{
+		visibility: visible;
+	}
+	.hidden{
+		visibility: hidden;
 	}
 }

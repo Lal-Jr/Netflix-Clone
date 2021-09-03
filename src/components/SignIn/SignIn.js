@@ -1,13 +1,19 @@
 import React, { useRef, useState } from "react";
-import { auth } from "../../firebase";
+import { auth, provider } from "../../firebase";
 import SignUp from "../SignUp/SignUp";
 import "./SignIn.scss";
 import { FcGoogle } from 'react-icons/fc'
+
 
 const SignIn = () => {
 	const [ show, setShow] = useState(false)
 	const emailRef = useRef(null);
 	const passwordRef = useRef(null);
+
+	const googleSignIn = (e) => {
+		e.preventDefault();
+		auth.signInWithPopup(provider);
+	}
 
 	const signIn = (e) => {
 		e.preventDefault();
@@ -40,7 +46,7 @@ const SignIn = () => {
 				<button type="submit" onClick={signIn}>
 					Sign In
 				</button>
-				<button type="submit" className="signin__google">
+				<button type="submit" className="signin__google" onClick={googleSignIn}>
 					<FcGoogle style={{ marginBottom: "-2px", marginRight:"5px" }}/>Sign In With Google
 				</button>
 				<h4>

@@ -3,12 +3,10 @@ import "./LoginPage.scss";
 import { IoIosArrowForward } from "react-icons/io";
 import SignIn from "../../components/SignIn/SignIn";
 import SignUp from "../../components/SignUp/SignUp";
-import { useHistory } from "react-router";
 
 const LoginPage = () => {
 	const [signIn, setSignIn] = useState(false);
 	const [signUp, setSignUp] = useState(false);
-	const history = useHistory();
 
 	return (
 		<div className="loginPage">

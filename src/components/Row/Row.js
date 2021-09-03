@@ -21,8 +21,6 @@ function Row({ title, fetchUrl, isLargeRow }) {
 		return year.getFullYear();
 	};
 
-	console.log(isLargeRow)
-
 	return (
 		<div className="row">
 			<h2>{title}</h2>
