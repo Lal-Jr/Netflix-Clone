@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Banner.scss";
 import axios from "../../axios";
 import requests from "../../Requests";
-import { GoPlus } from 'react-icons/go'
-import { BsPlayFill } from 'react-icons/bs'
+import { GoPlus } from "react-icons/go";
+import { BsPlayFill } from "react-icons/bs";
 
 const Banner = () => {
 	const [movie, setMovie] = useState([]);
@@ -26,12 +26,13 @@ const Banner = () => {
 			? string.substr(0, numLine - 1) + "..."
 			: string;
 	};
+
 	return (
 		<header
 			className="banner"
 			style={{
 				backgroundSize: "cover",
-				backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
+				// backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
 				backgroundPosition: "center center",
 			}}
 		>
@@ -44,14 +45,16 @@ const Banner = () => {
 						Play
 					</button>
 					<button className="banner__contents__buttons__button">
-						<GoPlus style={{ marginRight: "5px"}}/>Watchlist
+						<GoPlus style={{ marginRight: "5px" }} />
+						Watchlist
 					</button>
 				</div>
 				<h1 className="banner__contents__description">
 					{truncate(movie?.overview, 150)}
 				</h1>
 				<button className="banner__contents__buttons__button">
-						<BsPlayFill style={{ marginRight: "5px"}}/>Watch Trailer
+					<BsPlayFill style={{ marginRight: "5px" }} />
+					Watch Trailer
 				</button>
 			</div>
 			<div className="banner--fadeBottom" />
