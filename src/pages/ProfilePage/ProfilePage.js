@@ -22,7 +22,7 @@ const ProfilePage = () => {
 					<div className="profilePage__body__info__details">
 						<h2>{user.email}</h2>
 						<div className="profilePage__body__info__details__plans">
-							<h3>Plans (Current Plan: Premium)</h3>
+							<h3>Plans</h3>
 						</div>
 						<button
 							onClick={() => {

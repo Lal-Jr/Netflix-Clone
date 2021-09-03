@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import "./LoginPage.scss";
 import { IoIosArrowForward } from "react-icons/io";
 import SignIn from "../../components/SignIn/SignIn";
-// import SignUp from "../../components/SignUp/SignUp";
+import SignUp from "../../components/SignUp/SignUp";
+import { useHistory } from "react-router";
 
 const LoginPage = () => {
 	const [signIn, setSignIn] = useState(false);
-	// const [signUp, setSignUp] = useState(false);
+	const [signUp, setSignUp] = useState(false);
+	const history = useHistory();
 
 	return (
 		<div className="loginPage">
@@ -15,6 +17,7 @@ const LoginPage = () => {
 					className="loginPage__logo"
 					src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
 					alt="Netflix Logo"
+					onClick={()=> window.location.reload(true)}
 				/>
 				<button
 					className="loginPage__button"
@@ -25,34 +28,36 @@ const LoginPage = () => {
 				<div className="loginPage__gradient" />
 			</div>
 			<div className="loginPage__body">
-				{signIn ? (
-					<SignIn />
-				) : (
+				{!(signIn || signUp) ? (
 					<>
-						<h1>Unlimited movies, TV shows and more.</h1>
-						<h2>Watch anywhere. Cancel anytime.</h2>
-						<h3>
-							Ready to watch? Enter your email to create or
-							restart your membership.
-						</h3>
-						<div className="loginPage__body__input">
-							<form>
-								<input
-									type="email"
-									placeholder="Email Address"
+					<h1>Unlimited movies, TV shows and more.</h1>
+					<h2>Watch anywhere. Cancel anytime.</h2>
+					<h3>
+						Ready to watch? Enter your email to create or
+						restart your membership.
+					</h3>
+					<div className="loginPage__body__input">
+						<form>
+							<input
+								type="email"
+								placeholder="Email Address"
+							/>
+							<button
+								className="loginPage__body__input__getStarted"
+								onClick={() => setSignUp(true) && setSignIn(false)}
+							>
+								Get Started
+								<IoIosArrowForward
+									style={{ paddingTop: "5px" }}
 								/>
-								<button
-									className="loginPage__body__input__getStarted"
-									onClick={() => setSignIn(true)}
-								>
-									Get Started
-									<IoIosArrowForward
-										style={{ paddingTop: "5px" }}
-									/>
-								</button>
-							</form>
-						</div>
-					</>
+							</button>
+						</form>
+					</div>
+				</>
+					
+				) : (
+					(signIn && <SignIn />) ||
+					(signUp && <SignUp />)
 				)}
 			</div>
 		</div>

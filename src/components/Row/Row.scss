@@ -14,6 +14,7 @@
 				transform: scale(1.08);
 				z-index: 10;
 				cursor: pointer;
+				opacity: 0.75;
 			}
 		}
 		&__posterLarge {
@@ -27,13 +28,13 @@
 		}
 		&__details {
 			display: none;
-			background-color: aliceblue;
-			color: black;
+			color: white;
 			position: absolute;
 			bottom: 25px;
 			z-index: 11;
 			padding: 5px;
-			width: 10rem;
+			width: 22rem;
+			font-weight: bold;
 
 			&__main {
 				display: flex;
@@ -51,11 +52,15 @@
 				align-items: center;
 				text-transform: uppercase;
 				& > h4 {
-					border: 1px solid black;
+					border: 2px solid gray;
 					padding: 2px;
 					border-radius: 5px;
 				}
 			}
+		}
+
+		&__detailsLarge {
+			width: 13rem;
 		}
 		&__poster:hover + &__details {
 			display: flex;

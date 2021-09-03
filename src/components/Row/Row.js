@@ -21,6 +21,8 @@ function Row({ title, fetchUrl, isLargeRow }) {
 		return year.getFullYear();
 	};
 
+	console.log(isLargeRow)
+
 	return (
 		<div className="row">
 			<h2>{title}</h2>
@@ -43,7 +45,10 @@ function Row({ title, fetchUrl, isLargeRow }) {
 									}`}
 									alt={movie.name}
 								/>
-								<div className="row__posters__details">
+								<div className={`row__posters__details ${
+										isLargeRow &&
+										"row__posters__detailsLarge"
+									}`}>
 									<div className="row__posters__details__main">
 										<h4>
 											{movie.title ||
@@ -65,6 +70,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
 										<h4>{movie.original_language}</h4>
 									</div>
 								</div>
+								<div id="poster--fadeBottom" />
 							</div>
 						)
 				)}

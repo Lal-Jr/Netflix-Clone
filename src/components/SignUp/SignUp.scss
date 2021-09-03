@@ -32,5 +32,37 @@
 			text-align: left;
 			margin-bottom: 25px;
 		}
+
+		& > h4 {
+			text-align: left;
+			margin-top: 30px;
+		}
+	}
+
+	&__gray {
+		color: gray;
+	}
+
+	&__link {
+		&:hover {
+			cursor: pointer;
+			text-decoration: underline;
+		}
+	}
+
+	.signup__google{
+		padding: 16px 20px;
+			font-size: 1rem;
+			color: #111;
+			font-weight: 500;
+			border-radius: 5px;
+			background: rgb(247, 247, 247);
+			border: none;
+			cursor: pointer;
+			margin-top: 20px;
+
+			&:hover {
+				background-color: #fff;
+			}
 	}
 }

@@ -32,7 +32,7 @@ const Banner = () => {
 			className="banner"
 			style={{
 				backgroundSize: "cover",
-				// backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
+				backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
 				backgroundPosition: "center center",
 			}}
 		>
@@ -45,7 +45,7 @@ const Banner = () => {
 						Play
 					</button>
 					<button className="banner__contents__buttons__button">
-						<GoPlus style={{ marginRight: "5px" }} />
+						<GoPlus style={{ marginBottom: "-2px",marginRight: "5px" }} />
 						Watchlist
 					</button>
 				</div>
@@ -53,7 +53,7 @@ const Banner = () => {
 					{truncate(movie?.overview, 150)}
 				</h1>
 				<button className="banner__contents__buttons__button">
-					<BsPlayFill style={{ marginRight: "5px" }} />
+					<BsPlayFill style={{ marginBottom: "-2px",marginRight: "5px" }} />
 					Watch Trailer
 				</button>
 			</div>
