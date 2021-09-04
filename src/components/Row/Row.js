@@ -37,6 +37,12 @@ function Row({ title, fetchUrl, isLargeRow }) {
 							(!isLargeRow && movie.backdrop_path)) && (
 							<div>
 								<div
+									className={`row__posters__overlay ${
+										isLargeRow &&
+										"row__posters__overlayLarge"
+									}`}
+								/>
+								<div
 									className={`row__posters__details ${
 										isLargeRow &&
 										"row__posters__detailsLarge"
@@ -87,12 +93,6 @@ function Row({ title, fetchUrl, isLargeRow }) {
 										</h4>
 									</div>
 								</div>
-								<div
-									className={`row__posters__overlay ${
-										isLargeRow &&
-										"row__posters__overlayLarge"
-									}`}
-								/>
 								<img
 									className={`row__posters__poster ${
 										isLargeRow &&

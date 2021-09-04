@@ -53,19 +53,19 @@
 			text-decoration: underline;
 		}
 	}
-	.signin__google{
+	.signin__google {
 		padding: 16px 20px;
-			font-size: 1rem;
-			color: #111;
-			font-weight: 500;
-			border-radius: 5px;
-			background: rgb(247, 247, 247);
-			border: none;
-			cursor: pointer;
-			margin-top: 20px;
+		font-size: 1rem;
+		color: #111;
+		font-weight: 500;
+		border-radius: 5px;
+		background: rgb(247, 247, 247);
+		border: none;
+		cursor: pointer;
+		margin-top: 20px;
 
-			&:hover {
-				background-color: #fff;
-			}
+		&:hover {
+			background-color: #fff;
+		}
 	}
 }
