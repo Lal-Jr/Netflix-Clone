@@ -21,6 +21,12 @@ function Row({ title, fetchUrl, isLargeRow }) {
 		return year.getFullYear();
 	};
 
+	const truncate = (string, numLine) => {
+		return string?.length > numLine
+			? string.substr(0, numLine - 1) + "..."
+			: string;
+	};
+
 	return (
 		<div className="row">
 			<h2>{title}</h2>
@@ -30,23 +36,12 @@ function Row({ title, fetchUrl, isLargeRow }) {
 						((isLargeRow && movie.poster_path) ||
 							(!isLargeRow && movie.backdrop_path)) && (
 							<div>
-								<img
-									className={`row__posters__poster ${
-										isLargeRow &&
-										"row__posters__posterLarge"
-									}`}
-									key={movie.id}
-									src={`${base_url}${
-										isLargeRow
-											? movie.poster_path
-											: movie.backdrop_path
-									}`}
-									alt={movie.name}
-								/>
-								<div className={`row__posters__details ${
+								<div
+									className={`row__posters__details ${
 										isLargeRow &&
 										"row__posters__detailsLarge"
-									}`}>
+									}`}
+								>
 									<div className="row__posters__details__main">
 										<h4>
 											{movie.title ||
@@ -64,11 +59,53 @@ function Row({ title, fetchUrl, isLargeRow }) {
 										</h4>
 									</div>
 									<div className="row__posters__details__small">
-										<h5>Rating: {movie.vote_average}</h5>
-										<h4>{movie.original_language}</h4>
+										<div
+											style={{
+												display: "flex",
+												flexDirection: "column",
+												paddingRight: "20px",
+											}}
+										>
+											<h6
+												style={{
+													fontSize: "10px",
+													marginBottom: "7px",
+												}}
+											>
+												{truncate(movie?.overview, 150)}
+											</h6>
+											<h5>
+												Rating: {movie.vote_average}
+											</h5>
+										</div>
+										<h4
+											style={{
+												textTransform: "uppercase",
+											}}
+										>
+											{movie.original_language}
+										</h4>
 									</div>
 								</div>
-								<div id="poster--fadeBottom" />
+								<div
+									className={`row__posters__overlay ${
+										isLargeRow &&
+										"row__posters__overlayLarge"
+									}`}
+								/>
+								<img
+									className={`row__posters__poster ${
+										isLargeRow &&
+										"row__posters__posterLarge"
+									}`}
+									key={movie.id}
+									src={`${base_url}${
+										isLargeRow
+											? movie.poster_path
+											: movie.backdrop_path
+									}`}
+									alt={movie.name}
+								/>
 							</div>
 						)
 				)}
