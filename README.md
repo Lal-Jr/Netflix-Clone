@@ -236,9 +236,7 @@ npm install
 5) Then you will need to create the ./src/firebase.js file in your local repo, The content of firebase.prod.js file will be like the following:
 
 ```js
-import Firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
+import firebase from "firebase";
 
 const firebaseConfig = {
   apiKey: '',
@@ -250,7 +248,13 @@ const firebaseConfig = {
   appId: '',
 };
 
-const firebase = Firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const db = firebaseApp.firestore();
+const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();
+
+export { auth, provider };
+export default db;
 
 ```
 
