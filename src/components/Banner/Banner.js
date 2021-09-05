@@ -34,10 +34,13 @@ const Banner = () => {
 
 		axios.get(fetchMovie(id)).then((response) => { 
 			let videos=response.data.videos.results;
-			console.log(videos[0])
-			setVideoId(videos[0].key)
-		}
-		)}
+			for (var i = 0; i < 3; i++) {
+				if(videos[i].type === "Trailer"){
+					setVideoId(videos[i].key)
+					break
+				}
+			}
+		}).catch((err) => console.log(err))}
 
 	return (
 		<header
