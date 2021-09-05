@@ -45,7 +45,9 @@ const Banner = () => {
 						Play
 					</button>
 					<button className="banner__contents__buttons__button">
-						<GoPlus style={{ marginBottom: "-2px",marginRight: "5px" }} />
+						<GoPlus
+							style={{ marginBottom: "-2px", marginRight: "5px" }}
+						/>
 						Watchlist
 					</button>
 				</div>
@@ -53,7 +55,9 @@ const Banner = () => {
 					{truncate(movie?.overview, 150)}
 				</h1>
 				<button className="banner__contents__buttons__button">
-					<BsPlayFill style={{ marginBottom: "-2px",marginRight: "5px" }} />
+					<BsPlayFill
+						style={{ marginBottom: "-2px", marginRight: "5px" }}
+					/>
 					Watch Trailer
 				</button>
 			</div>
