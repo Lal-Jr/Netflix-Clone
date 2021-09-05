@@ -3,52 +3,33 @@
 	margin-left: 20px;
 	&__posters {
 		object-fit: contain;
-
-		&__overlay {
-			height: 200px;
-			width: 22.25rem;
-			object-fit: cover;
-			background-color: black;
-			position: absolute;
-			bottom: 24px;
-			transition: transform 650ms;
-			opacity: 0;
-
-			&:hover {
-				// transform: scale(1.09);
-				opacity: 0.8;
-				cursor: pointer;
-			}
-		}
-
-		&__overlayLarge {
-			height: 300px;
-			width: 12.5rem;
-			&:hover {
-				// transform: scale(1.08);
-				opacity: 0.8;
-				cursor: pointer;
-			}
-		}
 		&__poster {
 			object-fit: contain;
 			max-height: 200px;
 			margin-right: 10px;
 			transition: transform 650ms;
+			&:hover{
+				transform: scale(1.08);
+				cursor: pointer;
+				opacity: 0.7;
+			}
 		}
 		&__posterLarge {
 			max-height: 300px;
+			&:hover{
+				transform: scale(1.09);
+				cursor: pointer;
+				opacity: 0.7;
+			}
 		}
 		&__details {
-			display: flex;
-			flex-direction: column;
+			display: none;
 			color: white;
 			position: absolute;
 			bottom: 25px;
 			padding: 5px;
 			width: 22rem;
 			font-weight: bold;
-			visibility: hidden;
 
 			&__main {
 				display: flex;
@@ -75,11 +56,9 @@
 		&__detailsLarge {
 			width: 12.5rem;
 		}
-		// &__overlay:hover + &__poster {
-		// 	transform: scale(1.09);
-		// }
-		&__overlay:hover + &__details {
-			visibility: visible;
+		&__poster:hover + &__details {
+			display: flex;
+			flex-direction: column;
 		}
 	}
 }

@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./Banner.scss";
 import axios from "../../axios";
-import requests from "../../Requests";
+import requests, {fetchMovie} from "../../Requests";
 import { GoPlus } from "react-icons/go";
 import { BsPlayFill } from "react-icons/bs";
+import ModalVideo from 'react-modal-video';
 
 const Banner = () => {
+	const [isOpen, setOpen] = useState(false)
 	const [movie, setMovie] = useState([]);
+	const [videoId, setVideoId] = useState('');
 
 	useEffect(() => {
 		async function fetchData() {
-			const request = await axios.get(requests.fetchNetflixOriginals);
+			const request = await axios.get(requests.fetchNowPlaying);
 			setMovie(
 				request.data.results[
 					Math.floor(Math.random() * request.data.results.length - 1)
@@ -26,6 +29,15 @@ const Banner = () => {
 			? string.substr(0, numLine - 1) + "..."
 			: string;
 	};
+
+	const video =(id) => { 
+
+		axios.get(fetchMovie(id)).then((response) => { 
+			let videos=response.data.videos.results;
+			console.log(videos[0])
+			setVideoId(videos[0].key)
+		}
+		)}
 
 	return (
 		<header
@@ -54,12 +66,13 @@ const Banner = () => {
 				<h1 className="banner__contents__description">
 					{truncate(movie?.overview, 150)}
 				</h1>
-				<button className="banner__contents__buttons__button">
+				<button className="banner__contents__buttons__button" onClick={()=> {setOpen(true); video(movie.id)}}>
 					<BsPlayFill
 						style={{ marginBottom: "-2px", marginRight: "5px" }}
 					/>
 					Watch Trailer
 				</button>
+				<ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId={videoId} onClose={() => setOpen(false)} />
 			</div>
 			<div className="banner--fadeBottom" />
 		</header>

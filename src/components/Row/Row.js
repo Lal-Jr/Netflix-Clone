@@ -35,12 +35,19 @@ function Row({ title, fetchUrl, isLargeRow }) {
 					(movie) =>
 						((isLargeRow && movie.poster_path) ||
 							(!isLargeRow && movie.backdrop_path)) && (
-							<div>
-								<div
-									className={`row__posters__overlay ${
+								<div>
+								<img
+									className={`row__posters__poster ${
 										isLargeRow &&
-										"row__posters__overlayLarge"
+										"row__posters__posterLarge"
 									}`}
+									key={movie.id}
+									src={`${base_url}${
+										isLargeRow
+											? movie.poster_path
+											: movie.backdrop_path
+									}`}
+									alt={movie.name}
 								/>
 								<div
 									className={`row__posters__details ${
@@ -93,19 +100,6 @@ function Row({ title, fetchUrl, isLargeRow }) {
 										</h4>
 									</div>
 								</div>
-								<img
-									className={`row__posters__poster ${
-										isLargeRow &&
-										"row__posters__posterLarge"
-									}`}
-									key={movie.id}
-									src={`${base_url}${
-										isLargeRow
-											? movie.poster_path
-											: movie.backdrop_path
-									}`}
-									alt={movie.name}
-								/>
 							</div>
 						)
 				)}
