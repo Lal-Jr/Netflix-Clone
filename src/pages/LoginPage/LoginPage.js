@@ -54,7 +54,7 @@ const LoginPage = () => {
 				</>
 					
 				) : (
-					(signIn && <SignIn /> && setSignUp(false)) ||
+					(signIn && <SignIn />) ||
 					(signUp && <SignUp />)
 				)}
 			</div>
