@@ -13,7 +13,7 @@ const Banner = () => {
 
 	useEffect(() => {
 		async function fetchData() {
-			const request = await axios.get(requests.fetchNowPlaying);
+			const request = await axios.get(requests.fetchPopular);
 			setMovie(
 				request.data.results[
 					Math.floor(Math.random() * request.data.results.length - 1)
@@ -29,7 +29,6 @@ const Banner = () => {
 			? string.substr(0, numLine - 1) + "..."
 			: string;
 	};
-
 	const video =(id) => { 
 
 		axios.get(fetchMovie(id)).then((response) => { 
@@ -37,10 +36,14 @@ const Banner = () => {
 			for (var i = 0; i < 3; i++) {
 				if(videos[i].type === "Trailer"){
 					setVideoId(videos[i].key)
+						console.log(videoId)
 					break
 				}
+				else setVideoId(videos[0].key)
 			}
-		}).catch((err) => console.log(err))}
+		}).catch((err) => console.log(err))
+	}
+
 
 	return (
 		<header
@@ -56,7 +59,7 @@ const Banner = () => {
 					{movie?.title || movie?.original_name}
 				</h1>
 				<div className="banner__contents__buttons">
-					<button className="banner__contents__buttons__button__invert">
+					<button className="banner__contents__buttons__button__invert" onClick={()=> {setOpen(true); video(movie.id)}}>
 						Play
 					</button>
 					<button className="banner__contents__buttons__button">
