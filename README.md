@@ -20,13 +20,6 @@
 - [Live Demo](#live-demo)
 - [Technology Used](#technology-used)
 - [How To Use](#how-to-use)
-- [Author](#author)
-- [Show Your Support](#show-your-support)
-- [Acknowledgments](#acknowledgments)
-- [License](#license)
-
-
-
 
 # Project Walk-Through
 
@@ -67,7 +60,7 @@ This section contains the FAQs in a form of accordion, when you click anywhere i
 It contains useful links users may need it.
 
 
-***### The page is fully responsive to all mobile devices even the small ones. ###***
+<!-- ***### The page is fully responsive to all mobile devices even the small ones. ###*** -->
 
  # Sign-in Page
  
