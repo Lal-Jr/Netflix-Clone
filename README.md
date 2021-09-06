@@ -233,32 +233,7 @@ npm install
 
 ```
 
-5) Then you will need to create the ./src/firebase.js file in your local repo, The content of firebase.prod.js file will be like the following:
-
-```js
-import firebase from "firebase";
-
-const firebaseConfig = {
-  apiKey: '',
-  authDomain: '',
-  databaseURL: '',
-  projectId: '',
-  storageBucket: '',
-  messagingSenderId: '',
-  appId: '',
-};
-
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const db = firebaseApp.firestore();
-const auth = firebase.auth();
-const provider = new firebase.auth.GoogleAuthProvider();
-
-export { auth, provider };
-export default db;
-
-```
-
-6) Then you should use your firebase project information to fill the config information in firebase.prod.js file.
+5) Then you should use your firebase project information to fill the config information in firebase.js file.
 
 ```js
 const firebaseConfig = {
@@ -273,32 +248,12 @@ const firebaseConfig = {
 
 ```
 
-7) You can run the Netflix React App using the following command from your terminal:
+6) You can run the Netflix React App using the following command from your terminal:
 
 ```
 # Run the app
 npm start
 ```
 
-9) Now you can see the project in your browser as you see in the live demo link. 
+7) Now you can see the project in your browser as you see in the live demo link. 
 Happy Hacking!
-
-
-# Author
-
-👤 **Ahmed Tohamy**
-- Github: https://github.com/AhmedTohamy01
-- Linkedin: https://www.linkedin.com/in/ATohamy
-- Email: Ahmed-Tohamy@outlook.com
-
-# Show Your Support
-
-Give a ⭐️ if you like this project!
-
-# Acknowledgments
-
-Hat tip to everyone helped me to learn the techniques used in building this project.
-
-# License 
-
-MIT License.
