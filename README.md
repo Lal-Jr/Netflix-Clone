@@ -17,6 +17,7 @@
   - [Sign-in Page](#sign-in-page)
   - [Sign-up Page](#sign-up-page)
   - [Browse Page](#browse-page)
+  - [Profile Page](#profile-page)
 - [Live Demo](#live-demo)
 - [Technology Used](#technology-used)
 - [How To Use](#how-to-use)
@@ -176,8 +177,36 @@ You can close the video player anytime by clicking anywhere else on the screen.
 It contains useful links users may need it.
 
 
+ # Profile Page
 
-***### The page is fully responsive to all mobile devices even the small ones. ###***
+<div align="center"><a name="menu"></a>
+
+![ScreenShot](/public/images/readme/1.jpg)
+![ScreenShot](/public/images/readme/2.jpg)
+![ScreenShot](/public/images/readme/3.jpg)
+![ScreenShot](/public/images/readme/4.jpg)
+</div>
+
+The Profile Page consists of 3 main sections:
+
+***1) Header, which includes:***
+- Logo: 
+it redirects you to the home page when you click on it.
+
+- Avatar Icon
+
+***2) Profile Section, which includes:***
+- Avatar Icon.
+
+- Email of the User Logged In.
+
+- Current Plan and Other Plan options with Subscribe button which directs to Payment screen powered by Stripe.
+
+- Sign-Out Button: It logs out the currently logged in person and redirects to Home Page
+
+
+***3) Footer:***
+It contains useful links users may need it.
 
 # Live Demo
 
